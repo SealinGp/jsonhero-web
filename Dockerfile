@@ -6,7 +6,9 @@ COPY . /src
 # App
 RUN cd /src
 RUN npm install
-RUN echo "SESSION_SECRET=abc123" > .env
+ARG SESSION_SECRET=abc123
+ENV SESSION_SECRET=${SESSION_SECRET}
+RUN echo "SESSION_SECRET=${SESSION_SECRET}" > .env
 RUN npm run build
 
 CMD npm start

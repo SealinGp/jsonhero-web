@@ -1,0 +1,8 @@
+services:
+  jsonhero-web:
+    image: sealingp/jsonhero-web:latest
+    container_name: jsonhero-web
+    environment:
+      - SESSION_SECRET=leozhang # Optional
+    ports:
+      - "8787:8787"
